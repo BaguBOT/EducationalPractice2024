@@ -1,0 +1,24 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="100"
+        x:Class="PR10.Add.AddUser"
+        Title="AddUser">
+    <Grid>
+     <StackPanel  Orientation = "Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock TextAlignment="Center">Роль:</TextBlock>
+            <TextBox x:Name="RoleBox" Width="10" Height="1"/>
+            <TextBlock TextAlignment="Center">ФИО:</TextBlock>
+            <TextBox x:Name="FullNameBox" Width="200" Height="1"/>
+            <TextBlock TextAlignment="Center">Логин:</TextBlock>
+            <TextBox x:Name="LoginBox" Width="100" Height="1"/>
+            <TextBlock TextAlignment="Center">Пароль:</TextBlock>
+            <TextBox x:Name="PasswordBox" Width="100" Height="1"/>
+        </StackPanel>
+        <StackPanel  Orientation = "Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+        <Button x:Name="AddUserButton" HorizontalAlignment="Center" Content="Добавить пользователя" Click="AddUserButton_OnClick"/>
+        <Button x:Name="CancelButton" HorizontalAlignment="Center" Content="Отмена" Click="CancelButton_OnClick"/>
+        </StackPanel>
+    </Grid>
+    </Window>

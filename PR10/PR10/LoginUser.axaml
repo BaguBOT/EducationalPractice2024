@@ -1,0 +1,48 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="400"
+        x:Class="PR10.LoginUser"
+        Title="PR10"
+        Background="Moccasin">
+        <Grid> 
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Gainsboro" >
+                
+                <TextBlock TextAlignment="Center">Почта</TextBlock>
+                
+                <TextBox x:Name="LoginBox" Width="150" Height="1"/>
+                <CheckBox x:Name="AdminBox" IsThreeState="False"  IsChecked="False"/> 
+
+                <TextBlock TextAlignment="Center">Пароль</TextBlock>
+                
+               
+                <TextBox x:Name="PasswordBox" PasswordChar="*" Width="150" Height="1"/>
+                
+                <TextBlock></TextBlock>
+              
+                <Button x:Name="LoginButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти" Click="Login_OnClick"/>
+                
+             
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="TextError"></TextBlock>
+                <TextBlock VerticalAlignment="Center" FontStretch="Expanded" HorizontalAlignment="Center" IsVisible="False" x:Name="Textbox">Тут капча</TextBlock>
+               
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Button x:Name="Update" Content="↻" IsVisible="False" Click="UpdateCAPTCHA_OnClick" />
+                        <Button x:Name="Check" Content="Провеить" IsVisible="False" Click="Check_OnClick" />
+                </StackPanel>
+                
+                <TextBlock></TextBlock>
+                
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBox x:Name="BoxCheck" IsVisible="False"></TextBox>
+                        <TextBlock></TextBlock>
+                </StackPanel>
+               
+                <TextBlock></TextBlock>
+               
+                <Button x:Name="GuestButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти как Гость" Click="Guest_OnClick"/>
+        
+        </StackPanel>
+        </Grid>
+</Window>

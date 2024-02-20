@@ -1,0 +1,103 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="350"
+        x:Class="PR10.MainGuest"
+        Title="MainGuest">
+  <Grid> 
+  <TabControl Margin="5" >
+     <TabItem Header="Добро пожаловать">
+       <TextBlock Margin="15" FontSize="50"  HorizontalAlignment="Center" VerticalAlignment="Center">Добро пожалывать Гость </TextBlock>
+     </TabItem> 
+  <TabItem Header="Товары">
+    <Grid HorizontalAlignment= "Center"  >
+      <DataGrid x:Name="ProductsDataGrid" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top"
+                AutoGenerateColumns="False"
+                IsReadOnly="False"
+                x:CompileBindings="False"
+                GridLinesVisibility="All"
+                BorderThickness="1"
+                BorderBrush="Black"
+                Height="200"
+                Margin="0,10">
+        <DataGrid.Columns>
+          <DataGridTemplateColumn  Header ="Изображение">
+            <DataTemplate>
+              <Image Height="50" Width="50" Source="{Binding Изображение}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn>  
+          <DataGridTextColumn Header="Наименование" Binding="{Binding Наименование}"/>
+          <DataGridTextColumn Header="Описание" Binding="{Binding Описание}"/>
+          <DataGridTextColumn Header="Производитель" Binding="{Binding Производитель}"/>
+          <DataGridTextColumn Header="Стоимость" Binding="{Binding Стоимость}"/>
+          <DataGridTextColumn Header="Кол на складе" Binding="{Binding Кол_на_складе}"/></DataGrid.Columns>
+      </DataGrid>
+      <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="40">
+        <TextBlock VerticalAlignment="Center" >Поиск:</TextBlock>
+        <TextBox x:Name="SerachBoxProducts" TextChanging="SerachBoxProducts_OnTextChanging" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="200" />
+      </StackPanel>
+    </Grid>
+  </TabItem>
+  <TabItem Header="Заказы">
+    <Grid HorizontalAlignment= "Center"  >
+        <DataGrid x:Name="OrdersDataGrid" 
+                              HorizontalAlignment="Center" 
+                              VerticalAlignment="Top"
+                              IsReadOnly="False"
+                              x:CompileBindings="False"
+                              GridLinesVisibility="All"
+                              BorderThickness="1"
+                              BorderBrush="Black"
+                              Height="200"
+                              Margin="0,10">
+                                <DataGrid.Columns>
+                                  <DataGridTextColumn Header="Номер заказа" Binding="{Binding Номер_заказа}"/>
+                                  <DataGridTextColumn Header="Состав заказа" Binding="{Binding Состав_заказа}"/>
+                                  <DataGridTextColumn Header="Количество" Binding="{Binding Количество}"/>
+                                  <DataGridTextColumn Header="Дата заказа" Binding="{Binding Дата_заказа}"/>
+                                  <DataGridTextColumn Header="Дата доставки" Binding="{Binding Дата_доставки}"/>
+                                  <DataGridTextColumn Header="Пункт выдачи" Binding="{Binding Пункт_выдачи}"/>
+                                  <DataGridTextColumn Header="ФИО" Binding="{Binding ФИО_клиента}"/>
+                                  <DataGridTextColumn Header="Код для получения" Binding="{Binding Код_для_получения}"/>
+                                  <DataGridTextColumn Header="Статус заказа" Binding="{Binding Статус_заказа}"/>
+                                </DataGrid.Columns>
+        </DataGrid>
+      <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="40">
+        <TextBlock VerticalAlignment="Center" >Поиск:</TextBlock>
+        <TextBox x:Name="SerachBoxOrders" TextChanging="SerachBoxOrders_OnTextChanging" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="200" />
+      </StackPanel>
+      </Grid>
+  </TabItem>
+     <TabItem Header="Пункт выдачи">
+       <Grid HorizontalAlignment= "Center"  >
+         <DataGrid x:Name="PostOfficeDataGrid" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top"
+                   AutoGenerateColumns="False"
+                   IsReadOnly="False"
+                   x:CompileBindings="False"
+                   GridLinesVisibility="All"
+                   BorderThickness="1"
+                   BorderBrush="Black"
+                   Height="200"
+                   Margin="0,10">
+           <DataGrid.Columns>
+             <DataGridTextColumn Header="Почтовый индекс" Binding="{Binding Почтовый_индекс}"/>
+             <DataGridTextColumn Header="Город" Binding="{Binding Город}"/>
+             <DataGridTextColumn Header="Улица" Binding="{Binding Улица}"/>
+             <DataGridTextColumn Header="Дом" Binding="{Binding Дом}"/>
+           </DataGrid.Columns>
+         </DataGrid>
+         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="40">
+           <TextBlock VerticalAlignment="Center" >Поиск:</TextBlock>
+           <TextBox x:Name="SerachBoxPostOffice" TextChanging="SerachBoxPostOffice_OnTextChanging" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="200" />
+         </StackPanel>
+       </Grid>
+     </TabItem>
+   </TabControl>
+    <Button x:Name="Exit" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Выйти из гостя" Click="Exit_OnClick"/>
+  </Grid>
+</Window>

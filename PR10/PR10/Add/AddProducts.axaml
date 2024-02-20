@@ -1,0 +1,49 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="200"
+        x:Class="PR10.Add.AddProducts"
+        Title="AddProducts">
+    <Grid >
+        <StackPanel  Orientation = "Vertical">
+        <StackPanel  Orientation = "Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock TextAlignment="Center">Артикул:</TextBlock>
+            <TextBox x:Name="ArrhythmiaBox" Width="10" Height="1"/>
+            <TextBlock TextAlignment="Center">Название:</TextBlock>
+            <TextBox x:Name="NameBox" Width="200" Height="1"/>
+            
+            <TextBlock TextAlignment="Center">Единица измерения:</TextBlock>
+            <TextBox x:Name="UnitOfMeasurementBox" Width="100" Height="1"/>
+            <TextBlock TextAlignment="Center">Стоимость:</TextBlock>
+            <TextBox x:Name="CostBox" Width="100" Height="1"/>
+            <TextBlock TextAlignment="Center">РМВС:</TextBlock>
+            <TextBox x:Name="RMVSBox" Width="100" Height="1"/>
+     </StackPanel>
+            <TextBlock TextAlignment="Center">-----</TextBlock>
+            <StackPanel  Orientation = "Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock TextAlignment="Center">Производитель:</TextBlock>
+            <TextBox x:Name="ManuFacturerBox" Width="100" Height="1"/>
+            <TextBlock TextAlignment="Center">Поставщик:</TextBlock>
+            <TextBox x:Name="SupplierBox" Width="100" Height="1"/>
+            <TextBlock TextAlignment="Center">Категория товара:</TextBlock>
+            <TextBox x:Name="ProductCategoryBox" Width="100" Height="1"/>
+            </StackPanel>
+            <TextBlock TextAlignment="Center">-----</TextBlock>
+            <StackPanel  Orientation = "Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <TextBlock TextAlignment="Center">Действующая скидка:</TextBlock>
+                <TextBox x:Name="CurrentDiscountBox" Width="100" Height="1"/>
+                <TextBlock TextAlignment="Center">Кол на складе:</TextBlock>
+                <TextBox x:Name="QuantityInStockBox" Width="100" Height="1"/>
+                <TextBlock TextAlignment="Center">Описание:</TextBlock>
+                <TextBox x:Name="DescriptionBox" Width="100" Height="1"/>
+                <TextBlock TextAlignment="Center">Изображение:</TextBlock>
+                <TextBox x:Name="ImageBox" Width="100" Height="1"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel  Orientation = "Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+        <Button x:Name="AddUserButton" HorizontalAlignment="Center" Content="Добавить пользователя" Click="AddProductsButton_OnClick"/>
+        <Button x:Name="CancelButton" HorizontalAlignment="Center" Content="Отмена" Click="CancelButton_OnClick"/>
+        </StackPanel>
+    </Grid>
+</Window>
